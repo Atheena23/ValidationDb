@@ -1,0 +1,13 @@
+1. When a new user is being saved:
+   a. Check if the password field has been modified.
+      - If password is NOT modified, skip hashing.
+      - If password is modified or new, continue.
+
+2. Generate a salt for hashing:
+   - Use a secure number of rounds (e.g., 10).
+
+3. Hash the user's password using the generated salt.
+
+4. Replace the plain-text password with the hashed password in the user object.
+
+5. Proceed to save the user to the database.
